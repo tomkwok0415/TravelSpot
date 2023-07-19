@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TravelSpot</string>
+    <string name="title_home">Home</string>
+    <string name="title_map">Map</string>
+    <string name="Tutorial">Tutorial for Travel Spot</string>
+    <string name="Tutorial_detail">Welcome to Travel Spot! With this app, you can add notes to locations on a map.
+        \n\nTo get started, simply long-press on the map to drop a pin at your desired location. Once you\'ve added a location, you can edit its notes by clicking on the pin representing it on the map.
+        \n\nIn the home page, you can swipe left or right on a spot to edit its note or delete it. Additionally, you can mark a spot as "finished" by checking the box next to it.
+        \n\nNote that if a spot is marked as finished, the app will not send notifications for it.
+        \n\nPre-request please all the time allow the app
+    </string>
+</resources>

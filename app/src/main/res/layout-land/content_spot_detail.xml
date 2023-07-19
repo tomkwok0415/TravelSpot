@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.spotdetail.SpotDetailActivity"
+    tools:showIn="@layout/activity_spot_detail">
+
+    <fragment
+        android:id="@+id/mapDetail"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:contentDescription="map"
+        app:layout_constraintEnd_toStartOf="@id/editTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="174dp"
+        android:layout_marginRight="174dp"
+        android:text="Title"
+        android:textSize="18dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mapDetail" />
+
+    <EditText
+        android:id="@+id/editTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="CUHK"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle"
+        app:layout_constraintStart_toEndOf="@+id/mapDetail" />
+
+    <TextView
+        android:id="@+id/titleColor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="174dp"
+        android:layout_marginRight="174dp"
+        android:text="Color"
+        android:textSize="18dp"
+        app:layout_constraintTop_toBottomOf="@+id/editTitle"
+        app:layout_constraintStart_toEndOf="@+id/mapDetail" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/titleColor"
+        app:layout_constraintStart_toEndOf="@+id/mapDetail"
+        app:layout_constraintEnd_toEndOf="@+id/editNote">
+
+        <RadioButton
+            android:id="@+id/radioButtonRed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Red" />
+
+        <RadioButton
+            android:id="@+id/radioButtonBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Blue" />
+
+        <RadioButton
+            android:id="@+id/radioButtonYellow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yellow" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/titleNote"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="174dp"
+        android:layout_marginRight="174dp"
+        android:text="Note"
+        android:textSize="18dp"
+        app:layout_constraintStart_toEndOf="@+id/mapDetail"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupColor" />
+
+
+    <EditText
+        android:id="@+id/editNote"
+        android:inputType="textMultiLine"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="48dp"
+        android:lines="8"
+        android:minLines="6"
+        android:gravity="top|start"
+        android:maxLines="10"
+        android:layout_height="120dp"
+        android:layout_width="310dp"
+        android:scrollbars="vertical"
+        android:layout_marginRight="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mapDetail"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupColor"
+        app:layout_constraintLeft_toRightOf="@+id/titleNote"/>
+
+
+    <Button
+        android:id="@+id/buttonCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:onClick="cancelEntry"
+        android:text="@android:string/cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mapDetail"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSave"
+        app:layout_constraintTop_toBottomOf="@+id/editNote" />
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:onClick="saveEntry"
+        android:text="Save"
+        app:layout_constraintStart_toEndOf="@+id/buttonCancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editNote" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

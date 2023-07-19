@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.spotdetail.SpotDetailActivity"
+    tools:showIn="@layout/activity_spot_detail">
+
+    <fragment
+        android:id="@+id/mapDetail"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="250sp"
+        android:contentDescription="map"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="174dp"
+        android:layout_marginRight="174dp"
+        android:text="Title"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mapDetail" />
+
+    <EditText
+        android:id="@+id/editTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="CUHK"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+
+    <TextView
+        android:id="@+id/titleColor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="174dp"
+        android:layout_marginRight="174dp"
+        android:text="Color"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTitle" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/titleColor"
+        app:layout_constraintStart_toStartOf="@+id/titleColor"
+        app:layout_constraintEnd_toEndOf="@+id/editNote">
+
+        <RadioButton
+            android:id="@+id/radioButtonRed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Red" />
+
+        <RadioButton
+            android:id="@+id/radioButtonBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Blue" />
+
+        <RadioButton
+            android:id="@+id/radioButtonYellow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yellow" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/titleNote"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="174dp"
+        android:layout_marginRight="174dp"
+        android:text="Note"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleColor" />
+
+
+    <EditText
+        android:id="@+id/editNote"
+        android:inputType="textMultiLine"
+        android:layout_margin="16dp"
+        android:lines="8"
+        android:minLines="6"
+        android:gravity="top|start"
+        android:maxLines="10"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleNote"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCancel" />
+
+    <Button
+        android:id="@+id/buttonCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@android:string/cancel"
+        android:onClick="cancelSpot"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="16dp"
+        android:text="Save"
+        android:onClick="saveSpot"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonCancel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
